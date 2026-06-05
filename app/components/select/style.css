@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+.select {
+    @apply !px-[0.7rem] !py-[0.43rem] text-[0.9rem];
+    box-sizing: border-box;
+}
+
+.select ~ fieldset {
+    @apply text-[var(--fg)] rounded-lg p-2 !border-[var(--border)] !border-1;
+}
+
+.select-label {
+    @apply flex items-center gap-1;
+}
+
+.select-label svg {
+    @apply text-[var(--muted-fg)] !w-[0.9rem] !h-[0.9rem];
+}
