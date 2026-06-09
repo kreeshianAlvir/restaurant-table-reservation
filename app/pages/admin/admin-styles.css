@@ -1,0 +1,230 @@
+@reference "tailwindcss";
+.admin-container {
+    @apply w-full h-screen;
+}
+
+.admin-header {
+    @apply flex px-[5rem] py-[1.5rem] fixed top-[0] w-full justify-between items-center z-10 border-b border-[var(--border)];
+    background-color: rgba(var(--bg-rgb, 255,255,255), 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.service-tag {
+    @apply flex gap-[0.5rem] items-center bg-[var(--muted-bg)] rounded-lg p-[0.5rem] text-[var(--muted-fg)];
+}
+
+.admin-header-right {
+    @apply flex items-center gap-[1.5rem];
+}
+
+.admin-avatar {
+    @apply !bg-[var(--primary)] !text-[var(--primary-fg)];
+}
+
+.admin-content {
+    @apply flex grow-[1] mt-[6.3rem] px-[5rem] py-[2rem] flex-col gap-[1rem];
+}
+
+.card-container {
+    @apply grid grid-cols-2 gap-[1rem] w-full;
+}
+
+.card {
+    @apply flex items-center justify-between bg-[var(--card-bg)] border border-[var(--border)] rounded-[1.5rem] p-[1.5rem] items-start;
+}
+
+.card-left {
+    @apply flex flex-col gap-[1.5rem];
+}
+
+.card-left-title {
+    @apply !text-[0.9rem] text-[var(--muted-fg)];
+}
+
+.card-right {
+    @apply w-[3rem] h-[3rem] rounded-lg border border-[var(--border)] bg-[var(--card-bg)] flex items-center justify-center;
+}
+
+.card-left-details > :last-child {
+    @apply text-[var(--muted-fg)];
+}
+
+.floor-plan {
+    @apply w-full bg-[var(--card-bg)] border border-[var(--border)] rounded-[1.5rem] p-[1.5rem] flex flex-col gap-[1rem];
+}
+
+.floor-plan-header {
+    @apply flex items-center justify-between;
+}
+
+.floor-plan-legend {
+    @apply flex items-center gap-[1rem];
+}
+
+.plan-legend-circle {
+    @apply w-[0.7rem] h-[0.7rem] rounded-full bg-[var(--muted-bg)];
+}
+
+.plan-legend.occupied .plan-legend-circle {
+    @apply bg-[var(--primary)];
+}
+
+.plan-legend.reserved .plan-legend-circle {
+    @apply bg-[var(--reserved-bg)];
+}
+
+.plan-legend.available .plan-legend-circle {
+    @apply bg-[var(--muted-bg)];
+}
+
+.plan-legend {
+    @apply flex items-center gap-[0.5rem];
+}
+
+.seat {
+    @apply flex flex-col items-center justify-center gap-[0.5rem] border-[0.15rem] border-[var(--primary)] rounded-[1rem] px-[3rem] py-[1rem] w-fit relative;
+}
+
+.seat-people {
+    @apply flex gap-[0.5rem] items-center;
+}
+
+.grid-plan {
+    @apply flex flex-wrap gap-[1rem] justify-center;
+}
+
+.seat-tag {
+    @apply absolute top-[-0.5rem] bg-[var(--primary)] text-[0.5rem] text-[var(--primary-fg)] rounded-[0.5rem] px-[0.9rem] py-[0.2rem];
+}
+
+.seat-people svg {
+    @apply !w-[1rem] !h-[1rem];
+}
+
+.seat.available {
+    @apply border-[var(--input)];
+}
+
+.seat.available .seat-tag {
+    @apply bg-[var(--input)] text-[var(--muted-fg)];
+}
+
+.seat.available svg {
+    @apply text-[var(--input)];
+}
+
+.seat.available .seat-people {
+    @apply text-[var(--input)];
+}
+
+.seat.occupied {
+    @apply border-[var(--primary)];
+}
+
+.seat.occupied .seat-tag {
+    @apply bg-[var(--primary)] text-[var(--primary-fg)];
+}
+
+.seat.occupied svg {
+    @apply text-[var(--primary)];
+}
+
+.seat.occupied .seat-people {
+    @apply text-[var(--primary)];
+}
+
+.seat.reserved {
+    @apply border-[var(--reserved-bg)] bg-[var(--reserved-bg)]/9;
+}
+
+.seat.reserved .seat-tag {
+    @apply bg-[var(--reserved-bg)] text-[var(--primary-fg)];
+}
+
+.seat.reserved svg {
+    @apply text-[var(--reserved-bg)];
+}
+
+.seat.reserved .seat-people {
+    @apply text-[var(--reserved-bg)];
+}
+
+.table-container {
+    @apply w-full bg-[var(--card-bg)] border border-[var(--border)] rounded-[1.5rem] flex flex-col gap-[1rem] overflow-auto;
+}
+
+.table-header {
+    @apply flex gap-[1rem] items-center justify-between w-full px-[1.5rem] pt-[1.5rem] pb-[0.5rem] sticky left-0 right-0 flex-wrap;
+}
+
+.table {
+    @apply w-full border-t border-[var(--border)] rounded-b-[1.5rem];
+}
+
+.table-content-header {
+    @apply w-full bg-[var(--muted-bg)] text-[var(--muted-fg)];
+}
+
+.table-content-header .table-row .table-cell p {
+    @apply font-bold;
+}
+
+.table-row {
+    @apply flex gap-[1rem] justify-between h-[3rem] items-center px-[1.5rem];
+}
+
+.table-content-body .table-row {
+    @apply border-t border-[var(--border)];
+}
+
+.table-content-body .table-row:last-child {
+    @apply rounded-b-[1.5rem];
+}
+
+.table-content-body .table-row:hover {
+    @apply bg-[var(--bg)] cursor-pointer;
+}
+
+.table-row-status {
+    @apply border border-[var(--border)] rounded-full py-[0.3rem] px-[0.9rem] w-fit;
+}
+
+.table-row-status p {
+    @apply text-[0.6rem] font-bold;
+}
+
+.table-row-status.seated {
+    @apply border-[var(--primary)] bg-[var(--primary)]/10 text-[var(--primary)];
+}
+
+.table-row-status.confirmed {
+    @apply border-[var(--confirmed-bg)] bg-[var(--confirmed-bg)]/10 text-[var(--confirmed-bg)];
+}
+
+.table-row-status.pending {
+    @apply border-[var(--reserved-bg)] bg-[var(--reserved-bg)]/10 text-[var(--reserved-bg)];
+}
+
+.table-row-status.cancelled {
+    @apply border-[var(--destructive-bg)] bg-[var(--destructive-bg)]/10 text-[var(--destructive-bg)];
+}
+
+.table-cell {
+    @apply w-[5rem];
+}
+
+.table-cell:not(:first-child) {
+    @apply flex items-center gap-[0.5rem];
+}
+
+.table-cell svg {
+    @apply !w-[1rem] !h-[1rem];
+}
+
+.table-cell-name {
+    @apply font-bold;
+}
+
+.table-cell-contact {
+    @apply text-[var(--muted-fg)] font-[0.7rem];
+}

@@ -3,7 +3,7 @@ import { Box, TextField, Typography, InputAdornment } from '@mui/material'
 import './style.css'
 
 interface TextFieldComponentProps {
-    label: string,
+    label?: string,
     type?: 'text' | 'password',
     placeholder?: string,
     value?: string,
@@ -14,12 +14,13 @@ interface TextFieldComponentProps {
     required?: boolean,
     multiline?: boolean,
     rows?: number
+    classContainer?: string
 }
 
-export const TextFieldComponent = ({ label, type, placeholder, value, className, onChange, icon, labelIcon, required, multiline = false, rows = 1 }: TextFieldComponentProps) => {
+export const TextFieldComponent = ({ label, type, placeholder, value, className, onChange, icon, labelIcon, required, multiline = false, rows = 1, classContainer }: TextFieldComponentProps) => {
   return (
-    <Box className="flex flex-col gap-2 w-full">
-        <Typography className="text-field-label" variant="body2">{labelIcon && labelIcon} {label || 'Label'} {required && <span className="text-red-500">*</span>}</Typography>
+    <Box className={`flex flex-col gap-2 w-full ${classContainer}`}>
+        <Typography className="text-field-label" variant="body2">{labelIcon && labelIcon} {label} {required && <span className="text-red-500">*</span>}</Typography>
         <TextField 
             variant="outlined" 
             fullWidth 

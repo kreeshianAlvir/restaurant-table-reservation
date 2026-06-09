@@ -25,6 +25,8 @@
   --border: #E9E6E2;
   --input: #E5E0DC;
   --ring: #E77423;
+  --reserved-bg: #EEBD2B;
+  --confirmed-bg: #36A17D;
 }
 
 html,

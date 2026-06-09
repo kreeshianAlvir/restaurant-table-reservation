@@ -14,3 +14,15 @@
 .text-field-label svg {
     @apply text-[var(--muted-fg)] !w-[0.9rem] !h-[0.9rem];
 }
+
+.table-filter {
+    @apply w-[20rem];
+}
+
+.table-filter .text-field {
+    @apply !bg-[var(--muted-bg)] rounded-lg;
+}
+
+.table-filter:focused .text-field {
+    @apply !border-[var(--primary)] !border-1;
+}
