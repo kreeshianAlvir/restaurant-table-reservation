@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Box, Typography, Divider, Button} from '@mui/material'
 import {LocationOnOutlined, RestaurantMenu, Event, PeopleOutlineOutlined, LocalPhoneOutlined, PersonOutlineOutlined} from '@mui/icons-material'
 import './client-styles.css'
@@ -6,6 +6,30 @@ import { SelectComponent } from '../../components/select'
 import { TextFieldComponent } from '../../components/textField'
 
 export const ClientPage = () => {
+    useEffect(() => {
+        console.log("Fetching data...");
+        fetch("http://localhost:5050/reservations",{
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "GET",
+            // body: JSON.stringify({
+            //     branch: "Branch 1",
+            //     fullName: "John Doe",
+            //     contact: "1234567890",
+            //     dateTime: "2026-01-01T14:00",
+            //     size: 2,
+            //     notes: "No allergies, celebrations, seating preferences...",
+            // }),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    },[])
   return (
     <Box className="client-container">
         <Box className="client-hero">
