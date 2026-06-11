@@ -58,3 +58,7 @@
 .reserve-button {
     @apply !bg-[var(--primary)] !text-[var(--primary-fg)] !rounded-lg !p-2;
 }
+
+.guest-size-container button.active {
+    @apply bg-[var(--primary)] text-white;
+}

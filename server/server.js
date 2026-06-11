@@ -3,7 +3,7 @@ import cors from "cors";
 import api from "./api.js";
 import dotenv from "dotenv";
 import {connectDB} from "./connect.js";
-dotenv.config({path: "./config.env"});
+dotenv.config({path: "./server/config.env"});
 
 const PORT = process.env.PORT || 5050;
 const app = express();

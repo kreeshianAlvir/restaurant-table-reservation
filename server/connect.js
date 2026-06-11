@@ -1,6 +1,6 @@
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
-dotenv.config({path: "./config.env"});
+dotenv.config({path: "./server/config.env"});
 
 const ATLAS_URI = process.env.ATLAS_URI;
 if(!ATLAS_URI) throw new Error("ATLAS_URI is not set");

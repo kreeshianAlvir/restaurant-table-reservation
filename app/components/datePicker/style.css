@@ -1,0 +1,20 @@
+@reference "tailwindcss";
+.date-picker-container {
+    @apply flex flex-col gap-2 w-full;
+}
+
+.date-picker-container input {
+    @apply px-[0.7rem] py-[0.5rem] text-[0.9rem];
+}
+
+.date-picker-container fieldset {
+    @apply text-[var(--fg)] rounded-lg p-2 !border-[var(--border)] !border-1;
+}
+
+.date-picker-container svg {
+    @apply text-[var(--muted-fg)] !w-[0.9rem] !h-[0.9rem];
+}
+
+.date-picker > div > div:first-child {
+    @apply py-[0.43rem];
+}

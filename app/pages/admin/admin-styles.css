@@ -210,11 +210,15 @@
 }
 
 .table-cell {
-    @apply w-[5rem];
+    @apply w-[9rem];
 }
 
 .table-cell:not(:first-child) {
     @apply flex items-center gap-[0.5rem];
+}
+
+.table-cell:last-child {
+    @apply w-[15rem];
 }
 
 .table-cell svg {
@@ -222,9 +226,17 @@
 }
 
 .table-cell-name {
-    @apply font-bold;
+    @apply font-bold !text-[0.9rem] text-nowrap overflow-hidden text-ellipsis;
 }
 
 .table-cell-contact {
-    @apply text-[var(--muted-fg)] font-[0.7rem];
+    @apply text-[var(--muted-fg)] !text-[0.7rem];
+}
+
+.table-cell-time {
+    @apply !text-[0.8rem] text-nowrap;
+}
+
+.table-cell-notes {
+    @apply !text-[0.8rem] text-nowrap overflow-hidden text-ellipsis;
 }

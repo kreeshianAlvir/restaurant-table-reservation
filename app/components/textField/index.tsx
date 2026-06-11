@@ -14,10 +14,11 @@ interface TextFieldComponentProps {
     required?: boolean,
     multiline?: boolean,
     rows?: number
-    classContainer?: string
+    classContainer?: string,
+    name?: string
 }
 
-export const TextFieldComponent = ({ label, type, placeholder, value, className, onChange, icon, labelIcon, required, multiline = false, rows = 1, classContainer }: TextFieldComponentProps) => {
+export const TextFieldComponent = ({ label, type, placeholder, value, className, onChange, icon, labelIcon, required, multiline = false, rows = 1, classContainer, name }: TextFieldComponentProps) => {
   return (
     <Box className={`flex flex-col gap-2 w-full ${classContainer}`}>
         <Typography className="text-field-label" variant="body2">{labelIcon && labelIcon} {label} {required && <span className="text-red-500">*</span>}</Typography>
@@ -32,7 +33,8 @@ export const TextFieldComponent = ({ label, type, placeholder, value, className,
             slotProps={{ 
                 input: { 
                     startAdornment: icon ? <InputAdornment position="start">{icon}</InputAdornment> : undefined, 
-                    className: 'text-field'
+                    className: 'text-field',
+                    name: name
                 }
             }}
             multiline={multiline}

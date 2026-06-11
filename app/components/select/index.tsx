@@ -9,10 +9,11 @@ interface SelectComponentProps {
     value?: string,
     onChange?: React.ComponentProps<typeof Select>['onChange'],
     icon?: React.ReactNode,
-    required?: boolean
+    required?: boolean,
+    name?: string
 }
 
-export const SelectComponent = ({ label, options, value, onChange, icon, required }: SelectComponentProps) => {
+export const SelectComponent = ({ label, options, value, onChange, icon, required, name }: SelectComponentProps) => {
     return (
         <Box className="flex flex-col gap-2 w-full">
             <Typography className="select-label" variant="body2">{icon && icon} {label || 'Label'} {required && <span className="text-red-500">*</span>}</Typography>
@@ -22,7 +23,8 @@ export const SelectComponent = ({ label, options, value, onChange, icon, require
                 fullWidth
                 slotProps={{
                     input: {
-                        className: 'select'
+                        className: 'select',
+                        name: name
                     }
                 }}
                 IconComponent={KeyboardArrowDown}
